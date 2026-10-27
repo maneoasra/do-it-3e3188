@@ -1,0 +1,31 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+[functions]
+  node_bundler = "esbuild"
+[[redirects]]
+  from = "/api/team"
+  to = "/.netlify/functions/team"
+  status = 200
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=()"
+
+[[redirects]]
+  from = "http://do-it-3e3188.netlify.app/*"
+  to = "https://do-it-3e3188.netlify.app/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-cache, must-revalidate"

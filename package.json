@@ -1,0 +1,22 @@
+{
+  "name": "barneys-team",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "netlify dev --port 8889",
+    "db:generate": "drizzle-kit generate",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node tests/browser-check.mjs"
+  },
+  "dependencies": {
+    "@netlify/database": "latest",
+    "@netlify/functions": "^6.0.3",
+    "@netlify/identity": "^2.0.0",
+    "drizzle-orm": "beta",
+    "openai": "^7.43.0"
+  },
+  "devDependencies": {
+    "drizzle-kit": "beta",
+    "playwright": "^1.64.1"
+  }
+}
